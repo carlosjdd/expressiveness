@@ -115,7 +115,7 @@ class expressivenes():
         time.sleep(0.5)
 
         self.motor_x_msg.data[0] = -100
-        self.motor_x_msg.data[1] = 50
+        self.motor_x_msg.data[1] = 100
         self.motor_x_pub.publish(self.motor_x_msg)
         time.sleep(0.5)
 
