@@ -5,7 +5,7 @@ import rospy
 import time
 
 # import the necessary msgs. Example with msg type String_Int_Arrays:
-from std_msgs.msg import uInt8
+from std_msgs.msg import UInt8
 from std_msgs.msg import Int16MultiArray
 
 class expressivenes():
