@@ -98,7 +98,44 @@ class expressivenes():
         time.sleep(1)
 
     def sad(self):
-        pass
+        """Expression sad
+
+        Move the head slowly in no movement. Put sad face
+        """
+        initial = self.motor_y_initial
+
+        self.mouth_msg.data = 2
+        self.mouth_pub.publish(self.mouth_msg)
+
+        self.motor_y_msg.data[0] = 100
+        self.motor_y_msg.data[1] = 50
+        self.motor_y_pub.publish(self.motor_y_msg)
+        time.sleep(0.1)
+
+        self.motor_x_msg.data[0] = -100
+        self.motor_x_msg.data[1] = 50
+        self.motor_x_pub.publish(self.motor_x_msg)
+        time.sleep(0.5)
+
+        self.motor_x_msg.data[0] = 100
+        self.motor_x_msg.data[1] = 100
+        self.motor_x_pub.publish(self.motor_x_msg)
+        time.sleep(1)
+
+        self.motor_x_msg.data[0] = -100
+        self.motor_x_msg.data[1] = 100
+        self.motor_x_pub.publish(self.motor_x_msg)
+        time.sleep(1)
+
+        self.motor_x_msg.data[0] = 100
+        self.motor_x_msg.data[1] = 100
+        self.motor_x_pub.publish(self.motor_x_msg)
+        time.sleep(1)
+
+        self.motor_x_msg.data[0] = initial
+        self.motor_x_msg.data[1] = 500
+        self.motor_x_pub.publish(self.motor_x_msg)
+        time.sleep(1)
 
     def guilty(self):
         """Expression guilty
