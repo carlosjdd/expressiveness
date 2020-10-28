@@ -21,14 +21,14 @@ class expressivenes():
         """
 
         #Subscribe to ROS topics
-        self.exp_sub = rospy.Subscriber("expression", uInt8, self.callback)
+        self.exp_sub = rospy.Subscriber("expression", UInt8, self.callback)
         self.motor_x_sub = rospy.Subscriber("motor_x", Int16MultiArray, self.cb_motor_x)
         self.motor_y_sub = rospy.Subscriber("motor_y", Int16MultiArray, self.cb_motor_y)
 
         #Define the ROS publishers
         self.motor_x_pub = rospy.Publisher("motor_x", Int16MultiArray, queue_size=0)
         self.motor_y_pub = rospy.Publisher("motor_y", Int16MultiArray, queue_size=0)
-        self.mouth_pub = rospy.Publisher("set_expression", uInt8, queue_size=0)
+        self.mouth_pub = rospy.Publisher("set_expression", UInt8, queue_size=0)
 
         #Define object as msg type
         self.motor_x_msg = Int16MultiArray()
@@ -37,7 +37,7 @@ class expressivenes():
         self.motor_y_msg = Int16MultiArray()
         self.motor_y_msg.data = [0,0]
 
-        self.mouth_msg = uInt8()
+        self.mouth_msg = UInt8()
         self.mouth_msg.data = 0
 
         self.motor_x_initial = 0
