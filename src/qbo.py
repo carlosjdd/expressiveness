@@ -73,22 +73,22 @@ class expressivenes():
         self.motor_y_msg.data[0] = -100
         self.motor_y_msg.data[1] = 300
         self.motor_y_pub.publish(self.motor_y_msg)
-        time.sleep(0.2)
+        time.sleep(0.5)
 
         self.motor_y_msg.data[0] = 100
         self.motor_y_msg.data[1] = 300
         self.motor_y_pub.publish(self.motor_y_msg)
-        time.sleep(0.2)
+        time.sleep(0.5)
 
         self.motor_y_msg.data[0] = -100
         self.motor_y_msg.data[1] = 300
         self.motor_y_pub.publish(self.motor_y_msg)
-        time.sleep(0.2)
+        time.sleep(0.5)
 
         self.motor_y_msg.data[0] = 100
         self.motor_y_msg.data[1] = 100
         self.motor_y_pub.publish(self.motor_y_msg)
-        time.sleep(0.2)
+        time.sleep(0.5)
 
         self.motor_y_msg.data[0] = initial
         self.motor_y_msg.data[1] = 100
