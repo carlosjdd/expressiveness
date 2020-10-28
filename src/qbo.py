@@ -55,8 +55,11 @@ class expressivenes():
         self.mouth_msg.data = 0
 
         self.motor_x_pub.publish(self.motor_x_msg)
+        time.sleep(0.01)
         self.motor_y_pub.publish(self.motor_y_msg)
+        time.sleep(0.01)
         self.mouth_pub.publish(self.mouth_msg)
+        time.sleep(0.01)
 
 
     def happy(self):
@@ -71,27 +74,27 @@ class expressivenes():
         self.mouth_pub.publish(self.mouth_msg)
 
         self.motor_y_msg.data[0] = -100
-        self.motor_y_msg.data[1] = 300
+        self.motor_y_msg.data[1] = 500
         self.motor_y_pub.publish(self.motor_y_msg)
-        time.sleep(0.5)
+        time.sleep(0.3)
 
         self.motor_y_msg.data[0] = 100
-        self.motor_y_msg.data[1] = 300
+        self.motor_y_msg.data[1] = 500
         self.motor_y_pub.publish(self.motor_y_msg)
-        time.sleep(0.5)
+        time.sleep(0.3)
 
         self.motor_y_msg.data[0] = -100
-        self.motor_y_msg.data[1] = 300
+        self.motor_y_msg.data[1] = 500
         self.motor_y_pub.publish(self.motor_y_msg)
-        time.sleep(0.5)
+        time.sleep(0.3)
 
         self.motor_y_msg.data[0] = 100
-        self.motor_y_msg.data[1] = 100
+        self.motor_y_msg.data[1] = 500
         self.motor_y_pub.publish(self.motor_y_msg)
-        time.sleep(0.5)
+        time.sleep(0.3)
 
         self.motor_y_msg.data[0] = initial
-        self.motor_y_msg.data[1] = 100
+        self.motor_y_msg.data[1] = 500
         self.motor_y_pub.publish(self.motor_y_msg)
         time.sleep(1)
 
