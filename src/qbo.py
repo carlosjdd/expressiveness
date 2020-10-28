@@ -65,8 +65,7 @@ class expressivenes():
     def happy(self):
         """Expression happy
 
-        Move the head quickly in yes movement. Put happy face
-        In case any other expression has been called, it stops.
+        Move the head quickly in yes movement. Put happy face.
         """
         initial = self.motor_y_initial
 
@@ -102,7 +101,39 @@ class expressivenes():
         pass
 
     def guilty(self):
-        pass
+        """Expression guilty
+
+        Move the head slowly in yes movement as happy. Put indiference face
+        """
+        initial = self.motor_y_initial
+
+        self.mouth_msg.data = 11
+        self.mouth_pub.publish(self.mouth_msg)
+
+        self.motor_y_msg.data[0] = -100
+        self.motor_y_msg.data[1] = 100
+        self.motor_y_pub.publish(self.motor_y_msg)
+        time.sleep(0.5)
+
+        self.motor_y_msg.data[0] = 100
+        self.motor_y_msg.data[1] = 100
+        self.motor_y_pub.publish(self.motor_y_msg)
+        time.sleep(0.5)
+
+        self.motor_y_msg.data[0] = -100
+        self.motor_y_msg.data[1] = 100
+        self.motor_y_pub.publish(self.motor_y_msg)
+        time.sleep(0.5)
+
+        self.motor_y_msg.data[0] = 100
+        self.motor_y_msg.data[1] = 100
+        self.motor_y_pub.publish(self.motor_y_msg)
+        time.sleep(0.5)
+
+        self.motor_y_msg.data[0] = initial
+        self.motor_y_msg.data[1] = 500
+        self.motor_y_pub.publish(self.motor_y_msg)
+        time.sleep(1)
 
     def run_loop(self):
         """ Infinite loop.
