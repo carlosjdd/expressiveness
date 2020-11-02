@@ -23,7 +23,7 @@ class nose_listening():
         self.listen_sub = rospy.Subscriber("listening", Bool, self.callback)
 
         #Define the ROS publishers
-        self.nose_pub = rospy.Publisher("topic_pub", UInt8, queue_size=0)
+        self.nose_pub = rospy.Publisher("nose", UInt8, queue_size=0)
 
         #Define object as msg type
         self.nose_msg = UInt8()
@@ -53,9 +53,7 @@ class nose_listening():
         This void is executed when a message is received"""
 
         #Example to publish msg
-        print("listening")
         if data.data == True:
-            print("Encender nariz")
             self.nose_pub.publish(self.nose_msg)
         else:
             self.nose_pub.publish(0)
