@@ -2,5 +2,5 @@
 
 <launch>
     <node pkg="expressiveness" name="expressions" type="qbo.py" />
-    <node pkg="expressiveness" name="listening_nose" type="qbo_nose.py" />
+    <node pkg="expressiveness" name="listening_nose" type="qbo_nose.py" output="screen"/>
 </launch>

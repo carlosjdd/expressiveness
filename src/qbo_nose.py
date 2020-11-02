@@ -53,7 +53,9 @@ class nose_listening():
         This void is executed when a message is received"""
 
         #Example to publish msg
+        print("listening")
         if data.data == True:
+            print("Encender nariz")
             self.nose_pub.publish(self.nose_msg)
         else:
             self.nose_pub.publish(0)
