@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+
+<launch>
+    <node pkg="expressiveness" name="expressions" type="qbo.py" />
+    <node pkg="expressiveness" name="listening_nose" type="qbo_nose.py" />
+</launch>
