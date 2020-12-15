@@ -175,7 +175,7 @@ class expressivenes():
         self.motor_y_pub.publish(self.motor_y_msg)
         time.sleep(1)
 
-    def guilty(self):
+    def happy_slow(self):
         """Expression guilty
 
         Move the head slowly in yes movement as happy. Put indiference face
