@@ -175,6 +175,42 @@ class expressivenes():
         self.motor_y_pub.publish(self.motor_y_msg)
         time.sleep(1)
 
+    def guilty(self):
+        """Expression guilty
+
+        Move the head slowly in yes movement as happy. Put indiference face
+        """
+        initial = self.motor_y_initial
+
+        self.mouth_msg.data = 1
+        self.mouth_pub.publish(self.mouth_msg)
+        time.sleep(0.1)
+
+        self.motor_y_msg.data[0] = -100
+        self.motor_y_msg.data[1] = 80
+        self.motor_y_pub.publish(self.motor_y_msg)
+        time.sleep(0.5)
+
+        self.motor_y_msg.data[0] = 100
+        self.motor_y_msg.data[1] = 80
+        self.motor_y_pub.publish(self.motor_y_msg)
+        time.sleep(0.5)
+
+        self.motor_y_msg.data[0] = -100
+        self.motor_y_msg.data[1] = 80
+        self.motor_y_pub.publish(self.motor_y_msg)
+        time.sleep(0.5)
+
+        self.motor_y_msg.data[0] = 100
+        self.motor_y_msg.data[1] = 80
+        self.motor_y_pub.publish(self.motor_y_msg)
+        time.sleep(0.5)
+
+        self.motor_y_msg.data[0] = initial
+        self.motor_y_msg.data[1] = 80
+        self.motor_y_pub.publish(self.motor_y_msg)
+        time.sleep(1)
+
     def run_loop(self):
         """ Infinite loop.
 
@@ -201,6 +237,8 @@ class expressivenes():
             self.sad()
         elif data.data == 3:
             self.guilty()
+        elif data.data == 4:
+            self.happy_slow()
         else:
             self.none()
 
